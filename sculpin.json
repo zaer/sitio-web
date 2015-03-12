@@ -1,0 +1,21 @@
+{
+    "name": "comphppuebla/website",
+    "description": "PHP Puebla user group website",
+    "type": "sculpin-skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luis Montealegre",
+            "email": "montealegreluis@gmail.com",
+            "homepage": "http://www.montealegreluis.com/about"
+        }
+    ],
+    "require": {
+        "components/bootstrap": "~3.3",
+        "components/jquery": "~2.1",
+        "components/highlightjs": "~8.4"
+    },
+    "config": {
+        "component-dir": "source/components"
+    }
+}
