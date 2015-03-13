@@ -1,4 +1,5 @@
 /.sculpin
 /output_dev
 /bin
+/app/config/sculpin_site_prod.yml
 publish.sh
