@@ -1,22 +1,27 @@
 <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">{{ site.title }}</a>
-        </div>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img src="/images/logo-comunidad.png" alt="{{ site.title }}" title="{{ site.title }}">
+                </a>
+            </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="/blog">Posts Archive</a></li>
-                <li><a href="/blog/categories">Categories</a></li>
-                <li><a href="/comunidad">Comunidad</a></li>
-                <li><a href="/codigo-de-conducta">Código de conducta</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="/nosotros">Nosotros</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/blog/categories">Categories</a></li>
+                    <li><a href="/comunidades">Comunidades</a></li>
+                    <li><a href="/codigo-de-conducta">Código de conducta</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
     </div>
 </div>

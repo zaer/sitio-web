@@ -8,7 +8,7 @@
         <header>
             {% include 'components/navigation.html.twig' %}
         </header>
-        <div class="content container">
+        <article class="content container">
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}{% endblock %}
@@ -18,7 +18,7 @@
                     {% include 'meetups/2015-abril.html.twig' %}
                 </div>
             </div>
-        </div>
+        </article>
         <footer class="container">
             &copy; {{ "now"|date("Y") }} {{ site.title }}
         </footer>
