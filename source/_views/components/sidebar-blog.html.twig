@@ -1,21 +1,25 @@
-<div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">Categorías</h3></div>
-    <div class="list-group">
-        {% for category,posts in data.posts_categories %}
-            <a href="/blog/categorias/{{ category|url_encode(true) }}/" class="list-group-item">
-                {{ category }}
-            </a>
-        {% endfor %}
+{% if data.posts_categories|length > 0 %}
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Categorías</h3></div>
+        <div class="list-group">
+            {% for category,posts in data.posts_categories %}
+                <a href="/blog/categorias/{{ category|url_encode(true) }}/" class="list-group-item">
+                    {{ category }}
+                </a>
+            {% endfor %}
+        </div>
     </div>
-</div>
+{% endif %}
 
-<div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">Etiquetas</h3></div>
-    <div class="list-group">
-        {% for tag,posts in data.posts_tags %}
-            <a href="/blog/etiquetas/{{ tag|url_encode(true) }}/" class="list-group-item">
-                {{ tag }}
-            </a>
-        {% endfor %}
+{% if data.posts_tags|length > 0 %}
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Etiquetas</h3></div>
+        <div class="list-group">
+            {% for tag,posts in data.posts_tags %}
+                <a href="/blog/etiquetas/{{ tag|url_encode(true) }}/" class="list-group-item">
+                    {{ tag }}
+                </a>
+            {% endfor %}
+        </div>
     </div>
-</div>
+{% endif %}

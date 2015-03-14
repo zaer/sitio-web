@@ -1,4 +1,4 @@
-<div class="panel panel-primary">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h2 class="panel-title">
             <span class="glyphicon glyphicon-folder-open"></span> &nbsp;
@@ -24,7 +24,7 @@
         <p class="tags">
             <span class="glyphicon glyphicon-tags"></span>&nbsp;
             {% for tag in post.meta.tags %}
-                <a href="/blog/tags/{{ tag|url_encode(true) }}/">{{ tag }}</a>{% if not loop.last %},&nbsp;{% endif %}
+                <a href="/blog/etiquetas/{{ tag|url_encode(true) }}/">{{ tag }}</a>{% if not loop.last %},&nbsp;{% endif %}
             {% endfor %}
         </p>
     </div>

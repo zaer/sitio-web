@@ -6,11 +6,13 @@
     <body>
         <header>
             {% include 'components/navigation.html.twig' %}
+            <link rel="stylesheet" href="/components/highlightjs/styles/solarized_light.css" />
         </header>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
                     {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+                    {% include 'components/disqus.html.twig' %}
                 </div>
                 <div class="col-md-4 sidebar">
                     {% include 'components/sidebar-blog.html.twig' %}

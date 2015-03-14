@@ -13,7 +13,7 @@
                 </a>&nbsp;
                 <span class="glyphicon glyphicon-tags"></span>&nbsp;
                 {% for tag in page.tags %}
-                <a href="/blog/tags/{{ tag|url_encode(true) }}/">
+                <a href="/blog/etiquetas/{{ tag|url_encode(true) }}/">
                     {{ tag }}
                     </a>{% if not loop.last %}, {% endif %}
                 {% endfor %}
