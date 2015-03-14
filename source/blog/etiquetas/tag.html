@@ -1,0 +1,27 @@
+---
+layout: blog
+title: Etiquetas
+generator: [posts_tag_index, pagination]
+pagination:
+provider: page.tag_posts
+use:
+    - posts_categories
+    - posts_tags
+---
+{% block title %}{{ page.title }} "{{ page.tag }}"{% endblock %}
+{% block content_wrapper %}
+<div class="page-header"><h2><span class="glyphicon glyphicon-tag"></span> {{ page.tag }}</h2></div>
+{% include 'components/posts-list.html.twig' %}
+<div>
+    {% if page.pagination.previous_page or page.pagination.next_page %}
+    <nav class="article clearfix">
+        {% if page.pagination.previous_page %}
+        <a class="previous" href="{{ site.url }}{{ page.pagination.previous_page.url }}" title="Previous Page"><span class="title">Página anterior</span></a>
+        {% endif %}
+        {% if page.pagination.next_page %}
+        <a class="next" href="{{ site.url }}{{ page.pagination.next_page.url }}" title="Next Page"><span class="title">Página siguiente</span></a>
+        {% endif %}
+    </nav>
+    {% endif %}
+</div>
+{% endblock content_wrapper %}

@@ -1,8 +1,13 @@
 ---
-title: Syntax Highlighting
+title: Introducción a Github
+tags:
+    - git
+    - github
 categories:
-    - features
-
+    - Control de versiones
+use:
+    - posts_categories
+    - posts_tags
 ---
 You're all programmers, right? And you're writing code snippets on your Sculpin
 powered blog? Yeah. So you want some highlighting with your static site generation?

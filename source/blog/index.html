@@ -1,33 +1,36 @@
 ---
 layout: blog
-title: Home
+title: Blog
 generator: pagination
 pagination:
     max_per_page: 3
 use:
     - posts
+    - posts_categories
+    - posts_tags
 ---
-{% for post in page.pagination.items %}
-    <article>
-        <header>
-            <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
-        </header>
-        <div>
-            {{ post.blocks.content|raw }}
-        </div>
-        {% if post.meta.tags %}
-            <p class="tags">
-            Tags:
-            {% for tag in post.meta.tags %}
-            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-            </p>
-        {% endif %}
-    </article>
-{% endfor %}
+<h1>Blog</h1>
+
+<div class="posts-list">
+    {% for post in page.pagination.items %}
+    {% if loop.index0 % 2 == 0 %}<div class="row">{% endif %}
+    <div class="col-sm-6 posts-list">
+        {% include 'components/post.html.twig' %}
+    </div>
+    {% if loop.index0 % 2 == 1 or loop.last %}</div>{% endif %}
+    {% endfor %}
+</div>
 {% if page.pagination.previous_page or page.pagination.next_page %}
-    <nav>
-        {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
-        {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
-    </nav>
+<nav>
+    {% if page.pagination.previous_page %}
+    <a href="{{ page.pagination.previous_page.url }}" class="btn btn-primary btn-lg btn-block">
+        <span class="glyphicon glyphicon-calendar"></span> Posts más recientes
+    </a>
+    {% endif %}<br />
+    {% if page.pagination.next_page %}
+    <a href="{{ page.pagination.next_page.url }}" class="btn btn-primary btn-lg btn-block">
+        <span class="glyphicon glyphicon-calendar"></span> Posts anteriores
+    </a>
+    {% endif %}<br />
+</nav>
 {% endif %}

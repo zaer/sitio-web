@@ -1,0 +1,43 @@
+{% extends "blog.html.twig" %}
+
+{% block content_wrapper %}
+    <article>
+        <header>
+            <div class="page-header"><h1>{{ page.title }}</h1></div>
+            <p>
+                <span class="glyphicon glyphicon-time"></span>
+                {{ page.date|localizeddate('long', 'none', 'es', 'America/Mexico_City', 'MMMM dd yyyy') }}&nbsp;
+                <span class="glyphicon glyphicon-folder-open"></span> &nbsp;
+                <a href="/blog/categorias/{{ page.categories[0]|url_encode(true) }}/">
+                    {{ page.categories[0] }}
+                </a>&nbsp;
+                <span class="glyphicon glyphicon-tags"></span>&nbsp;
+                {% for tag in page.tags %}
+                <a href="/blog/tags/{{ tag|url_encode(true) }}/">
+                    {{ tag }}
+                    </a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+        </header>
+        <div>
+            {{ page.blocks.content|raw }}
+        </div>
+
+        {% if page.previous_post or page.next_post %}
+            <div>
+                {% if page.previous_post %}
+                    <a href="{{ page.previous_post.url }}/" title="{{ page.previous_post.title }}" class="btn btn-default btn-block">
+                        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;
+                        {{ page.previous_post.title }}
+                    </a>
+                {% endif %}
+                {% if page.next_post %}
+                    <a href="{{ page.next_post.url }}/" title="{{ page.next_post.title }}" class="btn btn-default btn-block">
+                        <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;
+                        {{ page.next_post.title }}
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </article>
+{% endblock %}
