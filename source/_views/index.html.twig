@@ -6,16 +6,18 @@
     <body>
         <header>
             {% include 'components/navigation.html.twig' %}
-            <link rel="stylesheet" href="/components/highlightjs/styles/dark.css" />
         </header>
         <div class="content container">
             <div class="row">
-                <div class="col-md-8">
-                    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
-                    {% include 'components/disqus.html.twig' %}
+                <div class="jumbotron">
+                    <img src="images/logo-ug-php-puebla.png" class="img-responsive center-block" alt="Grupo de usuarios PHP Puebla">
                 </div>
-                <div class="col-md-4 sidebar">
-                    {% include 'components/sidebar-blog.html.twig' %}
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="col-md-4">
                     {% include 'components/sidebar-meetup.html.twig' %}
                 </div>
             </div>
@@ -26,8 +28,6 @@
 
         <script src="/components/jquery/jquery.min.js"></script>
         <script src="/components/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/components/highlightjs/highlight.pack.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
         {% include 'components/analytics.html' %}
     </body>
 </html>
