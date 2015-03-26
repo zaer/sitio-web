@@ -30,14 +30,13 @@ y hacer un Pull Request para que quede publicado.
 
 ## Comunidad
 
-Si presentas una plática o escribes un post también debes agregar
-tus datos de contacto en la página de nosotros. Para esto debes
-crear un archivo con extensión `.html.twig` en la carpeta
-`source/views/team`. Un ejemplo de nombre de archivo sería
-`awesomedev.html.twig`.
+Eres bienvenido si quieres agregar tus datos de contacto en la
+página de nosotros. Para esto debes crear un archivo con extensión
+`.html.twig` en la carpeta `source/views/team`. Un ejemplo de
+nombre de archivo sería `awesomedev.html.twig`.
 
 Una vez que tienes tu archivo con tus datos de contacto debes
-agregarlo a la página de `source/nosotros`. Son tres perfiles por
+agregarlo al archivo `source/nosotros.html`. Son tres perfiles por
 `row`.
 
 ```twig
