@@ -70,6 +70,14 @@ pre, code {
     border: none;
 }
 
+.post-pagination {
+    margin-top: 5em;
+}
+
+article {
+    padding-bottom: 7em;
+}
+
 .main-nav a {
     line-height: 40px !important;
 }

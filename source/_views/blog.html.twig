@@ -12,7 +12,6 @@
             <div class="row">
                 <div class="col-md-8">
                     {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
-                    {% include 'components/disqus.html.twig' %}
                 </div>
                 <div class="col-md-4 sidebar">
                     {% include 'components/sidebar-blog.html.twig' %}
@@ -28,6 +27,7 @@
         <script src="/components/bootstrap/js/bootstrap.min.js"></script>
         <script src="/components/highlightjs/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        {% include 'components/comments.html.twig' %}
         {% include 'components/analytics.html' %}
     </body>
 </html>
