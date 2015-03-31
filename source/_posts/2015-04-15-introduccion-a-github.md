@@ -1,5 +1,6 @@
 ---
 title: Introducción a Github
+author: michmendar
 tags:
     - git
     - github

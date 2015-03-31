@@ -10,7 +10,7 @@ body {
 }
 
 .panel-default {
-    background-color: #666;
+    background-color: #444;
 }
 
 .panel-footer {
@@ -19,6 +19,13 @@ body {
 
 .btn-primary {
     background-color: #41B2C3;
+    border-color: #41B2C3;
+}
+
+.btn-primary:hover {
+    background-color: #77C5D5;
+    border-color: #77C5D5;
+    color: #222;
 }
 
 a {

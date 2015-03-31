@@ -1,5 +1,6 @@
 ---
 title: Introducción a Git
+author: montealegreluis
 tags:
     - git
 categories:

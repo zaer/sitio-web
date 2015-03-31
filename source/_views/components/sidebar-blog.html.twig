@@ -1,3 +1,12 @@
+{% if page.author is defined %}
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Autor</h3></div>
+        <div class="panel-body">
+            {% include 'team/' ~ page.author ~ '.html.twig' %}
+        </div>
+    </div>
+{% endif %}
+
 {% if data.posts_categories|length > 0 %}
     <div class="panel panel-default">
         <div class="panel-heading"><h3 class="panel-title">Categorías</h3></div>

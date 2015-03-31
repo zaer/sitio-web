@@ -3,6 +3,36 @@
 Repositorio del sitio Web del grupo de usuarios de PHP en Puebla
 (www.comunidadphppuebla.com).
 
+## Instalación
+
+Primero descarga el archivo `.phar` de [Sculpin][1]
+
+```bash
+$ curl -O https://download.sculpin.io/sculpin.phar
+```
+
+Después copia el archivo a la carpeta `/bin` del proyecto y
+dale permisos de ejecución:
+
+```bash
+$ mv sculpin.phar bin/sculpin
+$ chmod u+x bin/sculpin
+```
+
+Una vez que tienes el ejecutable listo, lo que sigue es instalar el
+sitio:
+
+```bash
+$ php bin/sculpin install
+```
+
+Puedes previsualizar el sitio en [http://localhost:8000/][2] usando
+el siguiente comando:
+
+```bash
+$ php bin/sculpin generate --watch --server
+```
+
 ## Pláticas
 
 Para proponer una plática debes hacer un Pull Request a este
@@ -53,3 +83,6 @@ Puedes ubicarlo en la sección de la página que corresponda:
 * En *Ponentes* si vas a presentar una plática.
 * En *Autores* si vas a publicar un post.
 * En *Comunidad* si quieres compartir tu información con el grupo.
+
+[1]: https://sculpin.io
+[2]: http://localhost:8000/
