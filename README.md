@@ -95,7 +95,7 @@ son los mismo que explicamos para los autores de posts en la sección
 anterior.
 
 Una vez que tienes tu archivo con tus datos de contacto debes
-agregarlo al archivo `source/nosotros.html`. Son tres perfiles por
+agregarlo al archivo `source/nosotros.html`. Son dos perfiles por
 `row`.
 
 ```twig
