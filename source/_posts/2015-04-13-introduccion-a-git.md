@@ -27,10 +27,10 @@ momento.
 $ cp -R app app.bak
 ```
 
-Es la forma más simple de revertir los cambios o de revisar las
-diferencias de una versión a otra. Si empiezan a ser demasiadas
-copias lo más probable es que tu siguiente paso sea numerarlas o
-ponerles la fecha en la que creaste la copia.
+Cuando creas copias de esta manera, revertir los cambios o revisar las
+diferencias de una versión a otra, son tareas relativamente simples.
+Si empiezan a ser demasiadas copias lo más probable es que tu siguiente
+paso sea numerarlas o ponerles la fecha en la que creaste la copia.
 
 ```bash
 $ cp -R app app.2015-05-01.bak
@@ -55,11 +55,12 @@ $ # email change.patch
 ```
 
 Este proceso es en escencia la forma en la que trabaja Git, cuando le
-pides que guarde una *copia* de tu proyecto, crea un archivo con lo
-necesario para saber como se veían tus archivos en ese punto.
+pides que guarde una *copia* de tu proyecto, crea un archivo con la
+información necesaria para saber como se veían tus archivos en ese punto.
 
 Git es entonces, **una herramienta para guardar, comparar y mezclar
-copias o versiones de un proyecto**.
+copias o versiones de un proyecto**. A estas copias también se les conoce
+como *snapshots* o instantáneas.
 
 ## ¿Cómo empiezo a usar Git?
 
@@ -91,11 +92,11 @@ versiones que vayas guardando de tu proyecto.
 
 ### Manejo de versiones básico
 
-Todos los repositorios de Git tienen 3 árboles, el primero es el *directorio
-de trabajo*, donde están los archivos de tu proyecto, el segundo es el
-`index`, también conocido como área de *staging*, que contiene los cambios
-que quieres guardar, y el último es `HEAD` que apunta a los últimos cambios
-guardados.
+Todos los repositorios de Git tienen 3 *áreas*, la primero es el *directorio
+de trabajo*, donde están los archivos de tu proyecto, la segunda es el
+`index`, también conocida como área de *staging*, que contiene los cambios
+que quieres guardar, y a la última se le conoce como `HEAD` que apunta al
+`index` que tiene los cambios más recientes.
 
 <img src="/images/content/arboles-git.png" class="img-responsive img-rounded center-block" alt="Árboles Git">
 
@@ -107,7 +108,8 @@ ya forma parte de una versión anterior y solo contiene modificaciones,
 también debes usar `git add` para llevar el registro de esos cambios.
 
 Si volvemos a nuestro ejemplo, tenemos por lo menos un archivo nuevo
-(*untracked*) al que queremos dar seguimiento (*tracked*)
+(en un estado *untracked*) al que queremos dar seguimiento (pasarlo al
+estado *tracked*)
 
 ```bash
 $ git add hello-world.php
@@ -117,8 +119,8 @@ $ git add hello-world.php
 
 El comando `git status` te permite ver cuál es el estado del área de
 *staging* en comparación con el área de trabajo. Si usas la opción
-`-s` producirá una salida corta. Por ejemplo, si hubieras ejecutado
-este comando antes del `git add` la salida hubiera sido:
+`-s`, el comando producirá una salida corta. Por ejemplo, si hubieras
+ejecutado este comando antes del `git add` la salida hubiera sido:
 
 ```bash
 $ git status -s
@@ -126,9 +128,9 @@ $ git status -s
 ```
 
 Los símbolos `??` significan que al archivo no se le está dando seguimiento
-(*untracked*) y por lo tanto los cambios a ese archivo no serán guardados por
-Git. Ahora, si le das seguimiento al archivo con `git add` y revisas su
-estado la salida sería la siguiente:
+(está en un estado *untracked*) y por lo tanto los cambios a ese archivo no
+serán guardados por Git. Ahora, si le das seguimiento al archivo con
+`git add` y revisas su estado la salida sería la siguiente:
 
 ```bash
 $ git add hello-world.php
@@ -136,9 +138,9 @@ $ git status -s
 A  hello-world.php
 ```
 
-La `A` indica que el archivo está en el área de *staging* (*tracked*)
-y que sus cambios serán registrados por Git. Supongamos que el contenido
-del archivo `hello-world.php` es el siguiente:
+La `A` indica que el archivo está en el área de *staging* (en un estado
+*tracked*) y que sus cambios serán registrados por Git. Supongamos que el
+contenido del archivo `hello-world.php` es el siguiente:
 
 ```php
 <?php
@@ -163,9 +165,8 @@ directorio de trabajo, esto sígnifica que el archivo fue agregado al
 área de staging (`A`) pero que contiene modificaciones en el área de
 trabajo (`M`). Por lo tanto, en este momento, Git guardaría el archivo
 con el `echo` porque es lo que se guardó en el área de *staging*, si
-quisieras guardar el archivo con el `print` como está en el área de
-trabajo lo tienes que volver a agregar para dejarlo de nuevo en el área
-de *staging*.
+quisieras guardar el archivo con el `print`,  lo tienes que volver a
+agregar para dejarlo de nuevo en el área de *staging*.
 
 ```bash
 git add hello-world.php
@@ -182,8 +183,9 @@ El comando `git diff` sirve, entre otras cosas, para mostrar la diferencia
 entre lo que está en el área de *staging* y lo que está modificado pero
 no se le está dando seguimiento (*unstaged*).
 
-Cuando ejecutas un `git diff` sin argumentos, te mostrará qué código ha
-cambiado en tu proyecto que no se ha agregado al área de *staging*.
+Cuando ejecutas el comando `git diff` sin argumentos, te mostrará qué
+código ha cambiado en tu proyecto que no se ha agregado al área de
+*staging*.
 
 Por ejemplo si hubieras ejecutado un `git diff` antes del segundo `git add`
 la salida hubiera sido la siguiente:
@@ -201,10 +203,11 @@ index 9d68457..a64b94c 100644
 ```
 
 Las últimas dos líneas muestran la diferencia en el contenido del archivo
-`hello-world.php` entre el área de *staging* y el área de trabajo.
+`hello-world.php` entre el área de *staging* (la línea que inicia con un
+`-`) y el área de trabajo (la línea que inicia con un `+`).
 
 Este comando también te permite saber que contenido moviste al área de
-*staging* si usas la opción `--cached`. Por ejemplo si ejecutamos el
+*staging* si usas la opción `--cached`. Por ejemplo, si ejecutas el
 comando después de agregar el cambio del `print` por el `echo`, la salida
 sería la siguiente:
 
@@ -222,9 +225,10 @@ index 0000000..a64b94c
 
 ### git commit
 
-Una vez que agregas el contenido que quieres guardar al índice (área de
-*staging*) debes ejecutar `git commit` para guardar los cambios en Git.
-Git guarda tu nombre y correo por cada cambio (commit) que guardas. Así que
+Una vez que agregas el contenido que quieres guardar en el área de
+*staging*, debes ejecutar `git commit` para guardar los cambios.
+
+Git guarda tu nombre y correo por cada cambio (commit). Así que
 primero debes decirle a Git tus datos:
 
 ```bash
@@ -239,9 +243,9 @@ incluye tu *commit*, el mensaje lo puedes pasar usando la opción `-m`.
 $ git commit -m "Add 'Hello world' example."
 ```
 
-Este primer *commit* se convierte en el `HEAD` de tu repositorio.
+Este primer *commit* se convierte en el índice `HEAD` de tu repositorio.
 Ahora que hemos guardado nuestra primera versión. Si ejecutamos `git status`
-veras que tienes un directorio de trabajo *limpio*, lo que significa que no
+verás que tienes un directorio de trabajo *limpio*, lo que significa que no
 hemos hecho cambios desde el último commit.
 
 ```bash
