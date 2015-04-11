@@ -28,11 +28,14 @@ body {
     color: #222;
 }
 
-a, code {
+a,
+code,
+#footer-nav .navbar-nav > li > a {
     color: #41B2C3;
 }
 
-a:hover {
+a:hover,
+#footer-nav .navbar-nav > li > a:hover {
     color: #77C5D5;
 }
 
@@ -50,14 +53,25 @@ h4 small {
     color: #888;
 }
 
+.footer-msg {
+    line-height: 3.6em;
+    display: inline-block;
+}
+
 footer {
     margin-top: 30px;
-    padding: 30px 0;
     border-top: 1px dashed #aaa;
-    background-color: #222;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+footer .navbar {
+    margin-bottom: 0;
+}
+
+footer .navbar a:hover {
+    background-color: transparent;
 }
 
 .content {
@@ -66,6 +80,8 @@ footer {
 
 pre {
     overflow: auto !important;
+    word-wrap: normal !important;
+    white-space: pre !important;
 }
 
 pre, code {
