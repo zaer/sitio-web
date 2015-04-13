@@ -1,0 +1,75 @@
+---
+layout: page
+title: Curso jQuery
+---
+{% block content %}
+    <h1>Curso jQuery</h1>
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="/images/workshops/jquery/jquery-mini.jpg">
+            </a>
+        </div>
+        <div class="media-body">
+            <p>
+                El 10 de febrero de 2014 tuvimos como instructor a
+                <a href="http://www.montealegreluis.com/">Luis Montealegre</a> compartiendo sus conocimientos
+                como Desarrollador Web en el curso de <em>jQuery</em>.
+            </p>
+            <p>
+                En esa ocasión contamos con el apoyo del
+                <a href="https://www.facebook.com/VinculacionFCCBUAP">departamento de Vinculación</a>
+                de la Benemérita Universidad Autónoma de Puebla, quienes amablemente nos
+                permitieron dar el curso en las instalaciones del Facultad de Ciencias de la Computación.
+            </p>
+        </div>
+    </div>
+    <h2><span class="glyphicon glyphicon-picture"></span> Galería</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <img
+                    src="/images/workshops/jquery/jquery-1.jpg"
+                    class="img-responsive img-rounded center-block">
+        </div>
+        <div class="col-md-4">
+            <img
+                    src="/images/workshops/jquery/jquery-2.jpg"
+                    class="img-responsive img-rounded center-block">
+        </div>
+        <div class="col-md-4">
+            <img
+                    src="/images/workshops/jquery/jquery-3.jpg"
+                    class="img-responsive img-rounded center-block">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <a
+                href="https://www.facebook.com/media/set/?set=a.558864840887123.1073741845.390406104399665&type=3"
+                class="btn btn-block btn-primary btn-lg"
+                target="_blank"
+                >
+            <i class="fa fa-facebook"></i> Ver galeri curso vespertino
+        </a>
+        <a
+                href="https://www.facebook.com/media/set/?set=a.558863597553914.1073741844.390406104399665&type=3"
+                class="btn btn-block btn-primary btn-lg"
+                target="_blank"
+                >
+            <i class="fa fa-facebook"></i> Ver galería curso sabatino
+        </a>
+    </div>
+    <h2><span class="glyphicon glyphicon-user"></span> Asistentes </h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="well">
+                {% include 'team/montealegreluis.html.twig' %}
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="well">
+                {% include 'team/michmendar.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
