@@ -116,6 +116,9 @@ article {
     .content {
         margin-top: 65px;
     }
+    .license {
+        display: none;
+    }
 }
 
 #forkongithub a {

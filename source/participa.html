@@ -6,6 +6,33 @@ title: Participa
 
 <div class="row">
     <div class="well">
+        <h2><span class="glyphicon glyphicon-user"></span> Cuéntanos quién eres</h2>
+
+        <p>
+            Para que tus datos de contacto aparezcan en la página de <em>Nosotros</em>
+            del sitio, debes agregarlos en la carpeta <code>source/_views/team</code>
+            del repositorio. Puedes agregar los links a las cuentas de redes sociales
+            y sitios Web que desees, los íconos son de Font Awesome y puedes revisar
+            cuales están disponibles
+            <a href="http://fortawesome.github.io/Font-Awesome/icons/#brand">aquí</a>.
+            Para el nombre del archivo puedes usar el nombre de alguna de tus cuentas
+            de redes sociales, yo por ejemplo uso <code>montealegreluis</code> (mi
+            cuenta de Twitter), así que el nombre del archivo con mis datos de contacto
+            es <code>montealegreluis.html.twig</code>.
+        </p>
+
+        <p>
+            Dependiendo de como quieras que sea tu participación con el grupo, puedes
+            agregar tus datos en alguna de las secciones de la página: organizadores
+            (agradeceremos mucho tu participación), conferencistas (si quieres
+            participar con una plática), autores (si quieres publicar un post) o
+            comunidad (para hacer networking con el grupo).
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="well">
         <h2><span class=" glyphicon glyphicon-blackboard"></span> Propon una plática</h2>
 
         <p>Si quieres participar con una plática el proceso es el siguiente:</p>
@@ -27,11 +54,14 @@ title: Participa
                 El archivo que debes modificar está en la carpeta
                 <code>source/_views/meetups</code>. Por ejemplo si quieres presentar
                 una plática para la última semana del mes de mayo de 2015, el archivo
-                a modificar es <code>2015-05.html.twig</code>.
+                a modificar es <code>2015-05.html.twig</code>, debes reemplazar
+                <code>{% verbatim %}{% include 'meetups/talks/ejemplo.html.twig' %}{% endverbatim %}</code>,
+                con el archivo con la descripción de tu plática, puedes usar el archivo de ejemplo
+                como muestra para crear el tuyo.
             </li>
             <li>
                 Una vez que tenemos las propuestas completas (3 pláticas aproximadamente,
-                para una reunión de 3 horas máximo) las promovemos hasta el dia de la
+                para una reunión de 2 horas máximo) las promovemos hasta el día de la
                 reunión.
             </li>
         </ul>
